@@ -6,7 +6,6 @@ import urllib.request
 
 url_of_parrainages = "https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.json"
 
-
 with urllib.request.urlopen(url_of_parrainages) as response:
     file_dict = json.load(response)
 
