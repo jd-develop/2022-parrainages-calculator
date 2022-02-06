@@ -2,10 +2,13 @@
 # -*- coding:utf-8 -*-
 import json
 import pprint
+import urllib.request
 
-with open("parrainagestotal.json", mode="r", encoding="UTF-8") as json_file:
-    file_dict = json.load(json_file)
-    json_file.close()
+url_of_parrainages = "https://presidentielle2022.conseil-constitutionnel.fr/telechargement/parrainagestotal.json"
+
+
+with urllib.request.urlopen(url_of_parrainages) as response:
+    file_dict = json.load(response)
 
 candidates = {}
 for parrain in file_dict:
